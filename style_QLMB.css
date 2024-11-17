@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết lập body */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+}
+
+/* Bố cục dashboard */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 270px;
+    padding: 20px;
+    background: #2d5167;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Make sidebar the reference for submenu */
+    z-index: 2; /* Ensure sidebar is above other elements */
+}
+
+.sidebar h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.sidebar nav ul.menu > li {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar nav a:hover {
+    background-color: #ffffff;
+    color: #2d5167;
+}
+
+/* Submenu styling */
+.sidebar nav ul.menu > li > ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #455a73;
+    display: none;
+    list-style-type: none;
+    border-radius: 4px;
+    width: 230px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 3; /* Display above the header */
+    margin-top: -10px; /* Adjust position to overlap header */
+}
+
+.sidebar nav ul.menu > li:hover > ul {
+    display: block;
+}
+
+.sidebar nav ul.menu > li ul li a {
+    padding: 10px;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.sidebar nav ul.menu > li ul li a:hover {
+    background-color: #637b93;
+    color: #ffffff;
+}
+
+/* Nội dung chính */
+.content {
+    flex: 1;
+    padding: 0 0px;
+}
+
+/* Header */
+.card {
+    background: #88B7D4;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #7da1c4;
+    margin-top: 0;
+    z-index: 1; /* Lower z-index than the submenu */
+}
+
+header h2 {
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 1.5em;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile span {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-box input {
+    padding: 10px;
+    font-size: 1em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #2d5167;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #1a394d;
+}
+
+/* Table */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    color: #333;
+}
+
+th {
+    background-color: #455a73;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+td {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.edit-icons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 1.2em;
+    color: #2d5167;
+    transition: color 0.3s;
+}
+
+.edit-icons button:hover {
+    color: #1a394d;
+}
+
+.container{
+    position: relative;
+}
+
+.add-plane {
+    text-align: center;
+    margin: 20px 0;
+}
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết lập body */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+}
+
+/* Bố cục dashboard */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* /* Sidebar */
+.sidebar {
+    width: 270px;
+    padding: 20px;
+    background: #2d5167;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Make sidebar the reference for submenu */
+    z-index: 2; /* Ensure sidebar is above other elements */
+}
+
+.content {
+    flex: 1;
+}
+.add-plane {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.add-plane button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #7da1c4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add-plane button:hover {
+    background-color: #5a8aa0;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    display: none; /* Ẩn ban đầu */
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    z-index: 10; /* Đảm bảo modal hiển thị trên các thành phần khác */
+}
+
+.modal {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+.modal h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+
+.modal label {
+    display: block;
+    text-align: left;
+    margin: 8px 0 4px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #2d5167;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal button:hover {
+    background-color: #1a394d;
+}
