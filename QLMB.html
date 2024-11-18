@@ -1,180 +1,272 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Hệ Thống Quản Lý Vé Chuyến Bay</title>
-        <link rel="stylesheet" href="test.css">
-    </head>
-
-
-    <body>
-        <div class="dashboard">
-            <aside class="sidebar">
-                <h1>QUẢN LÝ</h1>
-                <nav>
-                    <ul class="menu">
-                        <li>
-                            <a href="#">Hệ thống quản lý</a>
-                            <ul>
-                                <li>
-                                    <a href="test.html">Quản lý máy bay</a>
-                                </li>
-                                <li>
-                                    <a href="#">Quản lý chuyến bay</a>
-                                </li>
-                                <li>
-                                    <a href="#">Quản lý hãng hàng không</a>
-                                </li>
-                                <li>
-                                    <a href="#">Quản lý Vé</a>
-                                </li>
-                                <li>
-                                    <a href="#">Quản lý hóa đơn</a>
-                                </li>
-                            </ul> 
-                        </li>
-                        <li>
-                            <a href="#">Thông tin của tôi</a>
-                        </li>
-                    </ul> 
-                </nav>
-            </aside>
-
-            <main class="content">
-                <header class="card main">
-                    <h2>
-                        <i class="fas fa-plane icon"></i>
-                        <span class="underline">HỆ THỐNG QUẢN LÝ MUA VÉ MÁY BAY</span>
-                    </h2>
-                    <div class="profile">
-                        <span>Nguyễn A</span>
-                        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462563265_1048481507072032_4792974640442954065_n.png?stp=dst-png_p480x480&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGnn_gKMqtO8BoxsLVN5bN6-XpkZotZA835emRmi1kDzZLYF9NrZtfXWgStFYGYOq8QWacV6-Mh0ofWgCku4-O4&_nc_ohc=EaE6_hXMdC8Q7kNvgHuVyZa&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_gid=Al2PQnHG25Sja4kxhCTPAvT&oh=03_Q7cD1QHbl9OCa6HP7zoQDEGp_XYT02YG3fK3gU9LupDSffB26Q&oe=674C2535" alt="Profile.img">
-                    </div>
-                </header>
-        
-            <!-- Search Box -->
-                <div class="search-box">
-                    <form action="">
-                    <input type="text" placeholder="Mã vé">
-                    </form>
-                    <button>🔍</button>
-                </div>
-
-            <!-- Table -->
-                <table>
-                    <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>Mã máy bay</th>
-                            <th>Tên máy bay</th>
-                            <th>Số lượng ghế</th>
-                            <th>Hãng hàng không</th>
-                            <th>Chỉnh sửa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>PE0001</td>
-                            <td>Phi cơ 1</td>
-                            <td>35</td>
-                            <td>Vietnam Airline</td>
-                            <td class="edit-icons">
-                                <button>✎</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>PE0002</td>
-                            <td>Phi cơ 2</td>
-                            <td>35</td>
-                            <td>Vietnam Airline</td>
-                            <td class="edit-icons">
-                                <button>✎</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>PE0003</td>
-                            <td>Phi cơ 3</td>
-                            <td>7</td>
-                            <td>Vietjet Air</td>
-                            <td class="edit-icons">
-                                <button>✎</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>PE0004</td>
-                            <td>Phi cơ 4</td>
-                            <td>15</td>
-                            <td>BamBoo Airways</td>
-                            <td class="edit-icons">
-                                <button>✎</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>PE0005</td>
-                            <td>Phi cơ 5</td>
-                            <td>2</td>
-                            <td>BamBoo Airways</td>
-                            <td class="edit-icons">
-                                <button>✎</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>PE0006</td>
-                            <td>Phi cơ 6</td>
-                            <td>18</td>
-                            <td>Bamboo Airways</td>
-                            <td class="edit-icons">
-                                <button>✎</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div id="container">
-                    <div id="ADD" class="add-plane">
-                        <button id="openModalButton">Thêm Máy Bay</button>
-                    </div>
-                    
-                    <!-- Modal Overlay -->
-                    <div id="modalOverlay" class="modal-overlay" >
-                        <div class="modal">
-                            <h3>Thêm Máy Bay</h3>
-                            <form id="addPlaneForm">
-                                <label for="planeCode">Mã máy bay:</label>
-                                <input type="text" id="planeCode" required>
-                                
-                                <label for="planeName">Tên máy bay:</label>
-                                <input type="text" id="planeName" required>
-                
-                                <label for="seatCount">Số lượng ghế:</label>
-                                <input type="number" id="seatCount" required>
-                
-                                <label for="airline">Hãng hàng không:</label>
-                                <input type="text" id="airline" required>
-                
-                                <button type="button" id="addPlaneButton">Thêm</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-        <script src ="script.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="D:\airplane_12\font\fontawesome-free-6.6.0-web\fontawesome-free-6.6.0-web\css\all.css">
+    <title>Hệ Thống Quản Lý Vé Chuyến Bay</title>
+    <link rel="stylesheet" href="D:\airplane_12\css\style_QLMB.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
 
-    </html>
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h1>QUẢN LÝ</h1>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a  href="#">HỆ THỐNG QUẢN LÝ</a>
+
+                        <ul>
+                            <li>
+                                <a href="test.html">
+                                    <span class="icon"><i class="fa fa-plane"></i></span>
+                                    <span class="text">Quản lý máy bay</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-plane-departure"></i></span>
+                                    <span class="text">Quản lý chuyến bay</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-building"></i></span>
+                                    <span class="text">Quản lý hãng hàng không</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-map-marked-alt"></i></span>
+                                    <span class="text">Quản lý sân bay</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-ticket-alt"></i></span>
+                                    <span class="text">Quản lý Vé</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-file-invoice"></i></span>
+                                    <span class="text">Quản lý hóa đơn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-chart-line"></i></span>
+                                    <span class="text">Quản lý doanh thu</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-users"></i></span>
+                                    <span class="text">Quản lý người dùng</span>
+                                    
+                                    <!-- User
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <span class="icon"><i class="fa fa-user"></i></span>
+                                                <span class="text">Khách hàng</span>
+                                            </a>
+                                        </li>
+                            
+                                        <li>
+                                            <a href="#">
+                                                <span class="icon"><i class="fa fa-user-tie"></i></span>
+                                                <span class="text">Nhân viên</span>
+                                            </a>
+                                        </li>
+                            
+                                        <li>
+                                            <a href="#">
+                                                <span class="icon"><i class="fa fa-user-shield"></i></span>
+                                                <span classa="text">Quản trị viên</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    -->
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    <li>
+                        <a href="#">TÀI KHOẢN</a>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa fa-address-card"></i></span>
+                                    <span class="text">Thông tin tài khoản</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                                    <span class="text">Đăng xuất</span>
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+                </ul> 
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="card main">
+                <h2>
+                    <i class="fas fa-plane icon"></i>
+                    <span class="underline">HỆ THỐNG QUẢN LÝ MUA VÉ MÁY BAY</span>
+                </h2>
+                <div class="profile">
+                    <span>Nguyễn A</span>
+                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462563265_1048481507072032_4792974640442954065_n.png?stp=dst-png_p480x480&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGnn_gKMqtO8BoxsLVN5bN6-XpkZotZA835emRmi1kDzZLYF9NrZtfXWgStFYGYOq8QWacV6-Mh0ofWgCku4-O4&_nc_ohc=EaE6_hXMdC8Q7kNvgHuVyZa&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_gid=Al2PQnHG25Sja4kxhCTPAvT&oh=03_Q7cD1QHbl9OCa6HP7zoQDEGp_XYT02YG3fK3gU9LupDSffB26Q&oe=674C2535" alt="Profile.img">
+                </div>
+            </header>
+    
+        <!-- Search Box -->
+            <div class="search-box">
+                <form action="">
+                <input type="text" placeholder="Mã vé">
+                </form>
+                <button>🔍</button>
+            </div>
+
+        <!-- Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã máy bay</th>
+                        <th>Tên máy bay</th>
+                        <th>Số lượng ghế</th>
+                        <th>Hãng hàng không</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>PE0001</td>
+                        <td>Phi cơ 1</td>
+                        <td>35</td>
+                        <td>Vietnam Airline</td>
+                        <td class="edit-icons">
+                            <button>✎</button>
+                            <button>🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>PE0002</td>
+                        <td>Phi cơ 2</td>
+                        <td>35</td>
+                        <td>Vietnam Airline</td>
+                        <td class="edit-icons">
+                            <button>✎</button>
+                            <button>🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>PE0003</td>
+                        <td>Phi cơ 3</td>
+                        <td>7</td>
+                        <td>Vietjet Air</td>
+                        <td class="edit-icons">
+                            <button>✎</button>
+                            <button>🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>PE0004</td>
+                        <td>Phi cơ 4</td>
+                        <td>15</td>
+                        <td>BamBoo Airways</td>
+                        <td class="edit-icons">
+                            <button>✎</button>
+                            <button>🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>PE0005</td>
+                        <td>Phi cơ 5</td>
+                        <td>2</td>
+                        <td>BamBoo Airways</td>
+                        <td class="edit-icons">
+                            <button>✎</button>
+                            <button>🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>PE0006</td>
+                        <td>Phi cơ 6</td>
+                        <td>18</td>
+                        <td>Bamboo Airways</td>
+                        <td class="edit-icons">
+                            <button>✎</button>
+                            <button>🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div id="container">
+                <div id="ADD" class="add-plane">
+                    <button id="openModalButton">Thêm Máy Bay</button>
+                </div>
+                
+                <!-- Modal Overlay -->
+                <div id="modalOverlay" class="modal-overlay" >
+                    <div class="modal">
+                        <button type="button" id="closeModalButton" class="close-button">&times;</button> <!-- Nút đóng modal -->
+                        <h3>Thêm Máy Bay</h3>
+                        <form id="addPlaneForm">
+                            <div class ="form-row">
+                                <div class="form-group">
+                                    <label for="planeCode">Mã máy bay:</label>
+                                    <input type="text" id="planeCode" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="planeName">Tên máy bay:</label>
+                                    <input type="text" id="planeName" required>
+                                </div>
+                            </div>
+
+                            <div class ="form-row">
+                                <div class="form-group">
+                                    <label for="seatCount">Số lượng ghế:</label>
+                                    <input type="number" id="seatCount" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="airline">Hãng hàng không:</label>
+                                    <input type="text" id="airline" required>
+                                </div>
+                            </div>
+            
+                            <button type="button" id="addPlaneButton">Thêm</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src ="D:\airplane_12\script\script_QLMB.js"></script>
+</body>
+
+
+</html>
