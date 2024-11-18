@@ -22,6 +22,7 @@ body {
 .sidebar {
     width: 270px;
     padding: 20px;
+    max-height: 400px;
     background: #2d5167;
     color: #ffffff;
     display: flex;
@@ -29,6 +30,8 @@ body {
     align-items: center;
     position: relative; /* Make sidebar the reference for submenu */
     z-index: 2; /* Ensure sidebar is above other elements */
+    overflow-y: auto; /* Add scrolling when necessary */
+    max-height: 100vh; /* Optional: limit sidebar height to viewport */
 }
 
 .sidebar h1 {
@@ -52,46 +55,42 @@ body {
     color: #ffffff;
     text-decoration: none;
     padding: 12px 20px;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 4px;
     display: block;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar nav a:hover {
+.sidebar nav ul.menu li ul li a:hover {
     background-color: #ffffff;
     color: #2d5167;
 }
 
-/* Submenu styling */
-.sidebar nav ul.menu > li > ul {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    background-color: #455a73;
-    display: none;
-    list-style-type: none;
-    border-radius: 4px;
-    width: 230px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 3; /* Display above the header */
-    margin-top: -10px; /* Adjust position to overlap header */
+
+.sidebar nav .icon{
+    width: 20px; /* Đặt chiều rộng cố định cho icon */
+    display: inline-flex;
+    justify-content: center; /* Căn giữa nội dung (biểu tượng) theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung (biểu tượng) theo chiều dọc */
+    margin-right: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+.sidebar nav ul.menu li a .icon {
+    font-size: 1.1rem;
+}
+.sidebar nav ul.menu > li > a {
+    font-weight: bold;
+    padding-left: 0px;
+    cursor: text;
 }
 
-.sidebar nav ul.menu > li:hover > ul {
-    display: block;
-}
 
-.sidebar nav ul.menu > li ul li a {
-    padding: 10px;
-    color: #ffffff;
-    white-space: nowrap;
-}
+/* Hiển thị menu User con ngang hàng với mục cha */
 
-.sidebar nav ul.menu > li ul li a:hover {
-    background-color: #637b93;
-    color: #ffffff;
-}
+
+
+
+
+
 
 /* Nội dung chính */
 .content {
@@ -123,11 +122,11 @@ header h2 {
 
 .icon {
     margin-right: 8px;
-    font-size: 1.5em;
+    font-size: 1 rem;
 }
 
 .underline {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .profile {
@@ -283,35 +282,56 @@ body {
     background-color: #5a8aa0;
 }
 
+
+
 /* Modal Overlay */
+
 .modal-overlay {
     display: none; /* Ẩn ban đầu */
-    position: absolute;
+    position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    z-index: 10; /* Đảm bảo modal hiển thị trên các thành phần khác */
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
-
+.modal-overlay.visible {
+    display: flex; /* Hiển thị modal khi có lớp visible */
+}
 .modal {
+    position: relative;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    width: 500px;
+    max-width: 90%; /* Đảm bảo modal không vượt quá màn hình */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    overflow-y: auto; /* Thêm cuộn nếu nội dung quá nhiều */
+    max-height: 90vh; /* Giới hạn chiều cao tối đa để tránh tràn màn hình */
 }
 
+.modal .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
 
+.modal .form-group {
+    flex: 1 1 48%; /* Tăng phần trăm để mở rộng các ô input */
+    margin-right: 15px; /* Khoảng cách giữa các ô */
+}
+
+.modal .form-group:last-child {
+    margin-right: 0; /* Bỏ khoảng cách cho ô cuối trong hàng */
+}
 .modal h3 {
     margin-bottom: 15px;
     color: #333;
 }
-
 
 .modal label {
     display: block;
@@ -325,6 +345,7 @@ body {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
 }
 
 .modal button {
@@ -339,4 +360,20 @@ body {
 
 .modal button:hover {
     background-color: #1a394d;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 10px; /* Khoảng cách từ mép trên của modal */
+    right: 10px; /* Khoảng cách từ mép phải của modal */
+    background: none;
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: red; /* Màu khi hover */
 }
